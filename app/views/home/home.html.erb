@@ -18,9 +18,13 @@
       <%= job.boat.name %>
 
 
+
     <% end %>
+    <br>
+<%= link_to "sign out", destroy_user_session_path, :method => :delete if current_user %>
     <%else%>
-    Not working
+<%= link_to "sign in", 'users/sign_in' %>
+
 <% end %>
 
 
