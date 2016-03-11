@@ -1,0 +1,11 @@
+<h3>Username: <%= @user.email %></h3><br>
+
+<h3>Boats</h3>
+<% @boats.each do |b|  %>
+  <p>Name: <%= b.bname %></p>
+  <p>Number of containers: <%= b.containers %></p>
+  <p>Location: <%= b.location %></p>
+<% end %>
+
+<%= link_to "New Boat", '/boats/new' %>
+<%= link_to "New Job", '/jobs/new' %>

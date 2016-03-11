@@ -15,10 +15,12 @@ class BoatsController < ApplicationController
   # GET /boats/new
   def new
     @boat = Boat.new
+    @user = current_user
   end
 
   # GET /boats/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /boats
