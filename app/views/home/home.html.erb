@@ -1,4 +1,4 @@
-
+<% if current_user %>
 
     <% @boats.each do |boat| %>
       <%= boat.bname %>
@@ -19,4 +19,8 @@
 
 
     <% end %>
+    <%else%>
+    Not working
+<% end %>
+
 
