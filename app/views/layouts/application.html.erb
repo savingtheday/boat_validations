@@ -7,6 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav>
+<%= link_to "Home", '/' %>
+<%= link_to "All Boats", '/boats' %>
+<%= link_to "New Boats", '/boats/new' %>
+<%= link_to "All Jobs", '/jobs' %>
+<%= link_to "New Jobs", '/jobs/new' %>
+<% if current_user %>
+<%= link_to "sign out", destroy_user_session_path, :method => :delete if current_user %>
+    <%else%>
+<%= link_to "sign in", 'users/sign_in' %>
+<% end %>
+	</nav>
+
 
 <%= yield %>
 

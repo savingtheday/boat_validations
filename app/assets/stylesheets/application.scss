@@ -1,0 +1,7 @@
+
+@import 'bourbon';
+@import 'home';
+body{
+	background: tint(orange, 50%);
+	@include linear-gradient(to top, green, lightgreen);
+}
