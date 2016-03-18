@@ -1,3 +1,4 @@
+<% if user_signed_in?%>
 <%= form_for(@boat) do |f| %>
   <% if @boat.errors.any? %>
     <div id="error_explanation">
@@ -12,7 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.hidden_field :user_id, :value => @user.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
   <div class="field">
     <%= f.label :containers %><br>
@@ -21,7 +22,7 @@
   <div class="field">
 
     <%= f.label :location %><br><p>(Please choose from: PHL, NYC or CAM)</p>
-    <%= f.text_field :location %>
+   <%= f.select :location, Job::LOCATIONS.each_with_index.map{|l,i| [l, l]} %>
   </div>
   <div class="field">
     <%= f.label :bname %><br>
@@ -30,4 +31,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+<% end %>
 <% end %>

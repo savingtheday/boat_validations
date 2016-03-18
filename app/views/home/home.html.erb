@@ -7,15 +7,14 @@
     <% end %>
 
     <% @jobs.each do |job| %>
-      <%= job.name %>
-      <%= job.containers_needed %>
-      <%= job.location %>
+     
+      <%= job.container_needed %>
       <%= job.cargo %>
       <%= job.origin %>
       <%= job.job_cost %>
       <%= job.destination %>
       <%= job.job_name %>
-      <%= job.boat.name %>
+      <%= job.boat.bname %>
       
     <% end %>
     <br>

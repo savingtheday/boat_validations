@@ -20,8 +20,8 @@
     <%= f.text_field :cargo %>
   </div>
   <div class="field">
-    <%= f.label :origin %><br>
-    <%= f.text_field :origin %>
+    <%= f.label :origin %><br><p>(Please choose from: PHL, NYC or CAM)</p>
+   <%= f.select :origin, Job::LOCATIONS.each_with_index.map{|l,i| [l, l]} %>
   </div>
   <div class="field">
     <%= f.label :job_cost %><br>
@@ -36,8 +36,8 @@
     <%= f.text_field :job_name %>
   </div>
   <div class="field">
-    <%= f.label :boat_id %><br>
-    <%= f.number_field :boat_id %>
+    <%= f.label :bname %><br>
+    <%= f.collection_select :boat_id, Boat.order(:bname), :id,:bname, include_blank: true %>
   </div>
   <div class="actions">
     <%= f.submit %>
